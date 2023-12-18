@@ -1,19 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fast test</title>
+  <title>Calculator</title>
+  <style>
+    .calculator {
+      width: 350px;
+      padding: 5px;
+      border-radius: 10px;
+      border: 5px solid #000;
+    }
+    .calculator input {
+      width: 90%;
+      height: 50px;
+      margin-bottom: 20px;
+      margin-left: 15px;
+      font-size: 40px;
+      border-radius: 6px;
+      border: 2px solid #000;
+    }
+    .calculator button{
+      font-size: 35px;
+      margin-left: 17px;
+      padding: 20px;
+      background-color:#608377;
+      border-radius: 5px;
+    }
+    .calculator p {
+      font-size: 60px;
+    }
+    body {
+     height: 450px;
+    }
+  </style>
 </head>
 <body>
-    <h1>Shakib vaiya</h1>
-   I Will Crieat a Github Acaount
-   I Love My Work
-   my work is veary beutifull
-   Iam a expard worker 
-   <input type="email" name="Email">
-   <textarea name="riviow" rows="4" cols="50"></textarea>
-   <input type="submit" value="submit">
-   &copy;Shakib
+    <H1> USE MY CALCULATOR</H1>
+  <div class="calculator">
+    <input type="text" id="num1" placeholder="Enter a number">
+    <input type="text" id="num2" placeholder="Enter a number">
+    <button onclick="add()">+</button>
+    <button onclick="subtract()">-</button>
+    <button onclick="multiply()">×</button>
+    <button onclick="divide()">÷</button>
+    <p id="result"></p>
+  </div>
+&copy; SAKIB
+  <script>
+    function add() {
+      var num1 = parseFloat(document.getElementById('num1').value);
+      var num2 = parseFloat(document.getElementById('num2').value);
+      document.getElementById('result').innerText = num1 + num2;
+    }
+
+    function subtract() {
+      var num1 = parseFloat(document.getElementById('num1').value);
+      var num2 = parseFloat(document.getElementById('num2').value);
+      document.getElementById('result').innerText = num1 - num2;
+    }
+
+    function multiply() {
+      var num1 = parseFloat(document.getElementById('num1').value);
+      var num2 = parseFloat(document.getElementById('num2').value);
+      document.getElementById('result').innerText = num1 * num2;
+    }
+
+    function divide() {
+      var num1 = parseFloat(document.getElementById('num1').value);
+      var num2 = parseFloat(document.getElementById('num2').value);
+      if (num2 !== 0) {
+        document.getElementById('result').innerText = num1 / num2;
+      } else {
+        document.getElementById('result').innerText = "Cannot divide by zero";
+      }
+    }
+  </script>
 </body>
 </html>
